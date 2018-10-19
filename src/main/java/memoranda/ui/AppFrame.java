@@ -105,7 +105,7 @@ public class AppFrame extends JFrame {
 
     public Action minimizeAction = new AbstractAction("Close the window") {
         public void actionPerformed(ActionEvent e) {
-            doMinimize();
+            doExit();
         }
     };
 
@@ -685,12 +685,14 @@ public class AppFrame extends JFrame {
             if (Configuration.get("ON_CLOSE").equals("exit"))
                 doExit();
             else
-                doMinimize();
+                //doMinimize();
+                doExit();
         }
         else if ((e.getID() == WindowEvent.WINDOW_ICONIFIED)) {
             super.processWindowEvent(new WindowEvent(this,
                     WindowEvent.WINDOW_CLOSING));
             doMinimize();
+            //doExit();
         }
         else
             super.processWindowEvent(e);
