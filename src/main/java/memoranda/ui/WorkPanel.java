@@ -23,7 +23,7 @@ import main.java.memoranda.util.Local;
  * 
  * Copyright (c) 2003 Memoranda Team. http://memoranda.sf.net
  */
-
+// testing git branching
 /*$Id: WorkPanel.java,v 1.9 2004/04/05 10:05:44 alexeya Exp $*/
 public class WorkPanel extends JPanel {
 	BorderLayout borderLayout1 = new BorderLayout();
