@@ -38,6 +38,7 @@ public class WorkPanel extends JPanel {
 	public JButton tasksB = new JButton();
 	public JButton eventsB = new JButton();
 	public JButton filesB = new JButton();
+	public JButton helpB = new JButton(); 
 	JButton currentB = null;
 	Border border1;
 
@@ -94,6 +95,32 @@ public class WorkPanel extends JPanel {
 		agendaB.setMargin(new Insets(0, 0, 0, 0));
 		agendaB.setSelected(true);
 
+		helpB.setBackground(Color.white);
+		helpB.setMaximumSize(new Dimension(60, 80));
+		helpB.setMinimumSize(new Dimension(30, 30));
+
+		helpB.setFont(new java.awt.Font("Dialog", 1, 10));
+		helpB.setPreferredSize(new Dimension(50, 50));
+		helpB.setBorderPainted(false);
+		helpB.setContentAreaFilled(false);
+		helpB.setFocusPainted(false);
+		helpB.setHorizontalTextPosition(SwingConstants.CENTER);
+		helpB.setText(Local.getString("Help"));
+		helpB.setVerticalAlignment(SwingConstants.TOP);
+		helpB.setVerticalTextPosition(SwingConstants.BOTTOM);
+		helpB.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				helpB_actionPerformed(e);
+			}
+		});
+		helpB.setIcon(
+			new ImageIcon(
+				main.java.memoranda.ui.AppFrame.class.getResource(
+					"/ui/icons/question_mark.png")));
+		helpB.setOpaque(false);
+		helpB.setMargin(new Insets(0, 0, 0, 0));
+		helpB.setSelected(true);
+		
 		eventsB.setBackground(Color.white);
 		eventsB.setMaximumSize(new Dimension(60, 80));
 		eventsB.setMinimumSize(new Dimension(30, 30));
@@ -205,6 +232,7 @@ public class WorkPanel extends JPanel {
 		toolBar.add(tasksB, null);
 		toolBar.add(notesB, null);
 		toolBar.add(filesB, null);
+		toolBar.add(helpB, null); 
 		currentB = agendaB;
 		// Default blue color
 		currentB.setBackground(new Color(215, 225, 250));
@@ -242,6 +270,13 @@ public class WorkPanel extends JPanel {
 		dailyItemsPanel.selectPanel("NOTES");
 		setCurrentButton(notesB);
 		Context.put("CURRENT_PANEL", "NOTES");
+	}
+	
+	public void helpB_actionPerformed(ActionEvent e) {
+		cardLayout1.show(panel, "DAILYITEMS");
+		dailyItemsPanel.selectPanel("HELP");
+		setCurrentButton(helpB);
+		Context.put("CURRENT_PANEL", "HELP");
 	}
 
 	public void tasksB_actionPerformed(ActionEvent e) {
