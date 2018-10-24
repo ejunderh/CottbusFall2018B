@@ -121,9 +121,9 @@ public class WorkPanel extends JPanel {
 		helpB.setMargin(new Insets(0, 0, 0, 0));
 		helpB.setSelected(true);
 		
-		eventsB.setBackground(Color.white);
-		eventsB.setMaximumSize(new Dimension(60, 80));
-		eventsB.setMinimumSize(new Dimension(30, 30));
+		helpB.setBackground(Color.white);
+		helpB.setMaximumSize(new Dimension(60, 80));
+		helpB.setMinimumSize(new Dimension(30, 30));
 
 		routesB.setFont(new java.awt.Font("Dialog", 1, 10));
 		routesB.setPreferredSize(new Dimension(50, 50));
