@@ -755,7 +755,7 @@ public class PreferencesDialog extends JDialog {
 	}
 
 	void closeExitRB_actionPerformed(ActionEvent e) {
-		// this.askConfirmChB.setEnabled(true);
+		// this.askConfirmChB.setEnabled(true); 
 	}
 
 	void askConfirmChB_actionPerformed(ActionEvent e) {
